@@ -1,25 +1,28 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import MyButton from "./components/MyButton";
 import Diary from "./pages/Diary";
 import Edit from "./pages/Edit";
 import Home from "./pages/Home";
 import New from "./pages/New";
 
 function App() {
-  // 이미지가 제대로 나타나지 않을 경우 아래와 같이 입력
-  const env = process.env;
-  env.PUBLIC_URL = env.PUBLIC_URL || "";
-  //
-
   return (
     <BrowserRouter>
       <div className="App">
         <h2>App.js</h2>
-        <img src={process.env.PUBLIC_URL + `assets/emotion1.png`} />
-        <img src={process.env.PUBLIC_URL + `assets/emotion2.png`} />
-        <img src={process.env.PUBLIC_URL + `assets/emotion3.png`} />
-        <img src={process.env.PUBLIC_URL + `assets/emotion4.png`} />
-        <img src={process.env.PUBLIC_URL + `assets/emotion5.png`} />
+
+        <MyButton
+          text={"버튼"}
+          onClick={() => alert("버튼클릭")}
+          type={"positive"}
+        />
+        <MyButton
+          text={"버튼"}
+          onClick={() => alert("버튼클릭")}
+          type={"negative"}
+        />
+        <MyButton text={"버튼"} onClick={() => alert("버튼클릭")} />
 
         <Routes>
           <Route path="/" element={<Home />} />
