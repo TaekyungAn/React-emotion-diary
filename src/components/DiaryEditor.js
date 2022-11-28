@@ -1,6 +1,7 @@
-import { useContext, useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { DiaryDispatchContext } from "../App";
+import { DiaryDispatchContext } from "./../App";
+
 import EmotionItem from "./EmotionItme";
 import MyButton from "./MyButton";
 import MyHeader from "./MyHeader";
@@ -65,7 +66,6 @@ const DiaryEditor = () => {
     }
 
     onCreate(date, content, emotion);
-    // 일기작성페이지 뒤로 못오게 만드는 옵션 : replace
     navigate("/", { replace: true });
   };
 
