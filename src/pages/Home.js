@@ -14,6 +14,11 @@ const Home = () => {
   const [curDate, setCurDate] = useState(new Date());
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `감정 일기장`;
+  }, []);
+
   // 해당 월에 포함된 일기만 나오도록 하기
   useEffect(() => {
     // 복잡한 과정이기 때문에 다이어리리스트가 있을때만 동작하도록 한다.
